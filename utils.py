@@ -3,9 +3,9 @@ import numpy
 
 def get_unique(data, value=None):
     try:
-        return list(numpy.unique(data))[:int(value)]
+        return list(set(data))[:int(value)]
     except ValueError:
-        return list(numpy.unique(data))
+        return list(set(data))
 
 
 def get_filter(data, text=""):
@@ -17,8 +17,8 @@ def get_filter(data, text=""):
 def get_sorted(data, val=True):
     try:
         if val == "desc":
-            return sorted(data, reverse=False, key=lambda x: x.split(" ")[3])
-        return sorted(data, reverse=True, key=lambda x: x.split(" ")[3])
+            return sorted(data, reverse=False)
+        return sorted(data, reverse=True)
     except IndexError:
         return sorted(data, reverse=True)
 
