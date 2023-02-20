@@ -17,10 +17,10 @@ def get_filter(data, text=""):
 def get_sorted(data, val=True):
     try:
         if val == "desc":
-            return sorted(data, reverse=False)
-        return sorted(data, reverse=True)
+            return sorted(data, reverse=True)
+        return sorted(data, reverse=False)
     except IndexError:
-        return sorted(data, reverse=True)
+        return sorted(data, reverse=False)
 
 
 def get_map(data, value=0):
